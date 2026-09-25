@@ -1,0 +1,31 @@
+{
+  "name": "njupt-v",
+  "version": "1.0.0",
+  "description": "Motion-graphics intro film for Nanjing University of Posts and Telecommunications",
+  "scripts": {
+    "fonts": "python3 tools/build_fonts.py",
+    "cues": "node tools/cues.mjs",
+    "music": "node tools/cues.mjs && python3 tools/music.py",
+    "stills": "node tools/stills.mjs",
+    "render": "node tools/render.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YushangLu/njupt-v.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/YushangLu/njupt-v/issues"
+  },
+  "homepage": "https://github.com/YushangLu/njupt-v#readme",
+  "dependencies": {
+    "three": "^0.170.0"
+  },
+  "devDependencies": {
+    "playwright": "^1.56.1"
+  },
+  "type": "module",
+  "private": true
+}

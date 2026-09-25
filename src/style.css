@@ -1,0 +1,137 @@
+@font-face { font-family: 'Sans'; font-weight: 300; src: url(fonts/NotoSansSC-300.woff2) format('woff2'); }
+@font-face { font-family: 'Sans'; font-weight: 500; src: url(fonts/NotoSansSC-500.woff2) format('woff2'); }
+@font-face { font-family: 'Sans'; font-weight: 700; src: url(fonts/NotoSansSC-700.woff2) format('woff2'); }
+@font-face { font-family: 'Sans'; font-weight: 900; src: url(fonts/NotoSansSC-900.woff2) format('woff2'); }
+@font-face { font-family: 'Song'; font-weight: 600; src: url(fonts/NotoSerifSC-600.woff2) format('woff2'); }
+@font-face { font-family: 'Song'; font-weight: 900; src: url(fonts/NotoSerifSC-900.woff2) format('woff2'); }
+@font-face { font-family: 'Brush'; font-weight: 400; src: url(fonts/MaShanZheng-400.woff2) format('woff2'); }
+@font-face { font-family: 'Grotesk'; font-weight: 300; src: url(fonts/SpaceGrotesk-300.woff2) format('woff2'); }
+@font-face { font-family: 'Grotesk'; font-weight: 400; src: url(fonts/SpaceGrotesk-400.woff2) format('woff2'); }
+@font-face { font-family: 'Grotesk'; font-weight: 500; src: url(fonts/SpaceGrotesk-500.woff2) format('woff2'); }
+@font-face { font-family: 'Grotesk'; font-weight: 700; src: url(fonts/SpaceGrotesk-700.woff2) format('woff2'); }
+@font-face { font-family: 'Mono'; font-weight: 400; src: url(fonts/JetBrainsMono-400.woff2) format('woff2'); }
+@font-face { font-family: 'Mono'; font-weight: 700; src: url(fonts/JetBrainsMono-700.woff2) format('woff2'); }
+
+:root {
+  --blue: #2f7bff;
+  --cyan: #38e1ff;
+  --ice: #cfe6ff;
+  --ember: #ff6a3d;
+  --gold: #f3c77a;
+}
+
+html,
+body {
+  margin: 0;
+  background: #000;
+  overflow: hidden;
+}
+
+#stage {
+  position: relative;
+  width: 1920px;
+  height: 1080px;
+  overflow: hidden;
+  background: #02040a;
+  transform-origin: 0 0;
+  font-family: 'Sans', sans-serif;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+
+#stage > * {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1920px;
+  height: 1080px;
+}
+
+#dom,
+#hud {
+  pointer-events: none;
+}
+
+#flash {
+  background: radial-gradient(ellipse at center, #ffffff 0%, #d8ecff 45%, #9cc8ff 100%);
+  opacity: 0;
+}
+
+.scene {
+  position: absolute;
+  inset: 0;
+  display: none;
+}
+
+.abs {
+  position: absolute;
+}
+
+.mono {
+  font-family: 'Mono', monospace;
+}
+
+.grot {
+  font-family: 'Grotesk', sans-serif;
+}
+
+.ch {
+  display: inline-block;
+  will-change: transform, opacity, filter;
+}
+
+/* ------------------------------------------------------------------ HUD */
+.hud-corner {
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  border-color: rgba(170, 205, 255, 0.55);
+  border-style: solid;
+  border-width: 0;
+}
+.hud-label {
+  position: absolute;
+  font-family: 'Mono', monospace;
+  font-size: 15px;
+  letter-spacing: 0.22em;
+  color: rgba(185, 215, 255, 0.72);
+  white-space: nowrap;
+}
+.hud-label b {
+  color: #fff;
+  font-weight: 700;
+}
+.hud-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ff4b3a;
+  margin-right: 10px;
+  vertical-align: 1px;
+  box-shadow: 0 0 10px #ff4b3a;
+}
+.hud-bars {
+  position: absolute;
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  height: 26px;
+}
+.hud-bars i {
+  display: block;
+  width: 4px;
+  background: rgba(150, 205, 255, 0.8);
+}
+
+/* ------------------------------------------------------------- Captions */
+.kicker {
+  font-family: 'Mono', monospace;
+  font-size: 18px;
+  letter-spacing: 0.32em;
+  color: rgba(170, 210, 255, 0.85);
+  white-space: nowrap;
+}
+.glowtext {
+  text-shadow: 0 0 18px rgba(80, 160, 255, 0.55), 0 0 48px rgba(40, 110, 255, 0.35);
+}
